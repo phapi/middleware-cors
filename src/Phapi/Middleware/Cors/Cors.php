@@ -40,11 +40,25 @@ class Cors implements Middleware
      */
     protected $response;
 
+    /**
+     * Create middlware and add options
+     *
+     * @param array $options
+     */
     public function __construct(array $options = [])
     {
         $this->options = $this->prepareOptions($options);
     }
 
+    /**
+     * Invoke the middleware and check for CORS request
+     *
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @param callable|null $next
+     * @return ResponseInterface
+     * @throws BadRequest
+     */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
         // We need to easily get the request and response object through out the middleware
