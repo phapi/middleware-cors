@@ -1,4 +1,9 @@
-# CORS Middleware
+# HTTP Access Control (CORS) Middleware
+
+[![Build status](https://img.shields.io/travis/phapi/middleware-cors.svg?style=flat-square)](https://travis-ci.org/phapi/middleware-cors)
+[![Code Climate](https://img.shields.io/codeclimate/github/phapi/middleware-cors.svg?style=flat-square)](https://codeclimate.com/github/phapi/middleware-cors)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/phapi/middleware-cors.svg?style=flat-square)](https://codeclimate.com/github/phapi/middleware-cors/coverage)
+
 > Cross-site HTTP requests are HTTP requests for resources from a different domain than the domain of the resource making the request.  For instance, a resource loaded from Domain A (http://domaina.example) such as an HTML web page, makes a request for a resource on Domain B (http://domainb.foo), such as an image, using the img element (http://domainb.foo/image.jpg).  This occurs very commonly on the web today — pages load a number of resources in a cross-site manner, including CSS stylesheets, images and scripts, and other resources.
 
 > Cross-site HTTP requests initiated from within scripts have been subject to well-known restrictions, for well-understood security reasons.  For example HTTP Requests made using the XMLHttpRequest object were subject to the same-origin policy. In particular, this meant that a web application using XMLHttpRequest could only make HTTP requests to the domain it was loaded from, and not to other domains.  Developers expressed the desire to safely evolve capabilities such as XMLHttpRequest to make cross-site requests, for better, safer mash-ups within web applications.
@@ -45,9 +50,8 @@ $pipeline->pipe(new \Phapi\Middleware\Cors($corsOptions));
 
 See the [configuration documentation](http://phapi.github.io/docs/started/configuration/) for more information about how to configure the integration with the Phapi Framework.
 
-## Usage
-
 ## Exceptions
+A <code>BadRequest</code> exception is thrown when either the **origin**, **method** or the <code>Access-Control-Request-Method</code> header is required but missing.
 
 ## Phapi
 This middleware is a Phapi package used by the [Phapi Framework](https://github.com/phapi/phapi-framework). The middleware are also [PSR-7](https://github.com/php-fig/http-message) compliant and implements the [Phapi Middleware Contract](https://github.com/phapi/contract).
