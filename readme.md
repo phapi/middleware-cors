@@ -20,7 +20,9 @@ $ php composer.phar require phapi/middleware-cors:1.*
 ```
 
 ## Configuration
-The CORS Middleware has a few configuration options. In it's simplest form it can be configured like this:
+The configuration allows us to specify a variety of rules that applies to all requests that include a <code>origin</code> header. If no such header is included the request is not considered to be a cross-site request.
+
+In it's simplest form it can be configured like this:
 
 ```php
 <?php
