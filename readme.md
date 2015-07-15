@@ -13,7 +13,7 @@ Source: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 The CORS middleware handles these requests for the application.
 
 ## Installation
-This middleware is by default included in the [Phapi Framework](https://github.com/phapi/phapi-framework) but if you need to install it it's available to install via [Packagist](https://packagist.org) and [Composer](https://getcomposer.org).
+This middleware is **not** included by default in the [Phapi Framework](https://github.com/phapi/phapi-framework) but if you need to install it it's available to install via [Packagist](https://packagist.org) and [Composer](https://getcomposer.org).
 
 ```bash
 $ php composer.phar require phapi/middleware-cors:1.*
