@@ -130,7 +130,7 @@ class Cors implements Middleware
 
         // Add the headers to the response
         foreach ($headers as $name => $value) {
-            $this->response = $this->response->withAddedHeader($name, $value);
+            $this->response = $this->response->withAddedHeader($name, (string) $value);
         }
     }
 
@@ -152,7 +152,7 @@ class Cors implements Middleware
 
         // Add the headers to the response
         foreach ($headers as $name => $value) {
-            $this->response = $this->response->withAddedHeader($name, $value);
+            $this->response = $this->response->withAddedHeader($name, (string) $value);
         }
     }
 
